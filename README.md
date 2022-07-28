@@ -5,5 +5,5 @@
 <h4>python, Google collab</h4>
 <h4>Concept used:Naive bayes classifier(ML-Supervised learning)<h4>
 
-<h1> <a href="https://github.com/asaikiran1999/amazon_product_analyser/blob/main/amazon_product_analyzer.ipynb">click here</a>to view my project with collab notes</h1>
+<h1> <a href="https://asaikiran1999-amazon-product-analyser-app-pd3jn9.streamlitapp.com/">click here</a>to view my working model</h1>
 
