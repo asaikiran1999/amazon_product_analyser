@@ -5,5 +5,5 @@
 <h4>python, Google collab</h4>
 <h4>Concept used:Naive bayes classifier(ML-Supervised learning)<h4>
 
-<h1> <a href="https://asaikiran1999-amazon-product-analyser-app-hk2qjg.streamlitapp.com/">click here</a>to view my working model</h1>
+<h1> <a href="https://asaikiran1999-amazon-product-analyser-app-ar98ia.streamlitapp.com/">click here</a>to view my working model</h1>
 
