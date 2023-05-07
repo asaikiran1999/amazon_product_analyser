@@ -67,7 +67,7 @@ def main():
 
             sentiment = []
             for i in range(len(reviews_list)):
-                sentiment.append(int(model.predict(vec.transform([reviews[i]]))))
+                sentiment.append(int(model.predict(vec.transform(reviews[i]))))
 
             # Pie chart, where the slices will be ordered and plotted counter-clockwise:
             labels = 'Good', 'Bad'
