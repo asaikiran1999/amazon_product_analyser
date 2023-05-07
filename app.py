@@ -50,7 +50,7 @@ def main():
                 tag.extract()
             for review in soup.find_all('div', class_='review-text-content'):
                 reviews = review.get_text().strip()
-                reviews_list.append(reviews)
+            reviews_list.append(reviews)
             st.text(reviews_list[0])
                 # fix indentation here
             st.text('webscraping completed')
