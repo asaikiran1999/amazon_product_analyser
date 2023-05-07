@@ -61,7 +61,7 @@ def main():
             # Pie chart, where the slices will be ordered and plotted counter-clockwise:
             labels = 'Good', 'Bad'
             sizes = [sentiment.count(1), sentiment.count(0)]
-            explode = (0, 0.1)  # only "explode" the 2nd slice (i.e. 'Bad')
+            # only "explode" the 2nd slice (i.e. 'Bad')
             nan_values = np.isnan(sizes)
             # create a pie chart
             fig1, ax1 = plt.subplots()
@@ -71,7 +71,5 @@ def main():
 
             # display the chart
             plt.show()
-
-
 if __name__=='__main__':
     main()
