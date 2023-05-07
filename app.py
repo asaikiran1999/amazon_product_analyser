@@ -62,7 +62,7 @@ def main():
             labels = 'Good', 'Bad'
             sizes = [sentiment.count(1), sentiment.count(0)]
             # only "explode" the 2nd slice (i.e. 'Bad')
-            nan_values = np.isnan(sizes)
+            sizes = [x for x in sizes if not np.isnan(x)]
             # create a pie chart
             fig1, ax1 = plt.subplots()
             ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
