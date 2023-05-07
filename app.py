@@ -41,7 +41,7 @@ def main():
 		Amazon_reviews_link = st.text_input("Review link","")
 		if st.button('analyse'):
 			url = Amazon_reviews_link
-			url_cut = url[:-10]
+			url_cut = url[:-11]
 			reviews_list = []
 			st.text('webscraping the reviews')
 			for page in range(2,100):
