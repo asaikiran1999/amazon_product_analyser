@@ -44,21 +44,30 @@ def main():
             url_cut = url
             reviews_list = []
             st.text('webscraping the reviews')
-            response = requests.get(url)
-            soup = BeautifulSoup(response.content, 'html.parser')
-            for tag in soup.find_all(['img', 'video']):
-                tag.extract()
-            for review in soup.find_all('div', class_='review-text-content'):
-                reviews = review.get_text().strip()
-            reviews_list.append(reviews)
-            st.text(reviews_list[0])
+            import requests
+            from bs4 import BeautifulSoup
+
+            def get_reviews(url):
+                headers = {'User-Agent': 'Mozilla/5.0'}
+                response = requests.get(url, headers=headers)
+                soup = BeautifulSoup(response.text, 'html.parser')
+                reviews = []
+                for review in soup.find_all('div', {'data-hook': 'review'}):
+                    review_text = review.find('span', {'data-hook': 'review-body'}).text.strip()
+                    rating = float(review.find('i', {'data-hook': 'review-star-rating'}).text.replace('out of 5 stars', '').strip())
+                    reviews.append((review_text, rating))
+                return reviews
+
+                url = 'https://www.amazon.com/product-reviews/B01DFKC2SO'
+                reviews = get_reviews(url)
+
                 # fix indentation here
             st.text('webscraping completed')
             st.text('labeling good and bad started')
 
             sentiment = []
             for i in range(len(reviews_list)):
-                sentiment.append(int(model.predict(vec.transform([reviews_list[i]]))))
+                sentiment.append(int(model.predict(vec.transform([reviews[i]]))))
 
             # Pie chart, where the slices will be ordered and plotted counter-clockwise:
             labels = 'Good', 'Bad'
