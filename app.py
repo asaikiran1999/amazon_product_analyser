@@ -55,14 +55,7 @@ def main():
 			    for i in range(0,len(reviews)):reviews_list.append(reviews[i].get_text())
 			st.text('webscraping completed')
 			st.text('labeling good and bad started')      
-                        #for review in soup.find_all('div', class_='review-text-content'):
-    # Extract the text content of the review
-    #reviews = reviews.get_text().strip()
-	                #for i in range(0,len(reviews)):
-			 #reviews_list.append(reviews[i].get_text())
-    
-    # Check if the review contains images or videos
-          for i in reviews_list:
+                        for i in reviews_list:
 				if 'img' not in i and 'video' not in i:
 					sentiment = []
 				for i in range(len(reviews_list)):
