@@ -63,6 +63,7 @@ def main():
             sizes = [sentiment.count(1), sentiment.count(0)]
             # only "explode" the 2nd slice (i.e. 'Bad')
             sizes = [x for x in sizes if not np.isnan(x)]
+            sizes = sizes.dropna()
             # create a pie chart
             fig1, ax1 = plt.subplots()
             ax1.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
