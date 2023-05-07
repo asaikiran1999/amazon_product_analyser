@@ -45,7 +45,7 @@ def main():
 			reviews_list = []
 			st.text('webscraping the reviews')
 			for review in soup.find_all('div', class_='review-text-content'):
-				review = review.get_text().strip()
+				reviews = review.get_text().strip()
 			for i in range(0,len(reviews)):reviews_list.append(reviews[i].get_text())
 			st.text('webscraping completed')
 			st.text('labeling good and bad started')
