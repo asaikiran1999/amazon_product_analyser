@@ -41,23 +41,34 @@ def main():
 		Amazon_reviews_link = st.text_input("Review link","")
 		if st.button('analyse'):
 			url = Amazon_reviews_link
-			url_cut = url[:-11]
+			url_cut = url
 			reviews_list = []
 			st.text('webscraping the reviews')
+			
 			for page in range(2,100):
 			  url = url_cut+str(page)
 			  code = requests.get(url)
 			  if str(code) == "<Response [200]>":
 			    soup = bs(code.content,'html.parser')
-			    reviews = soup.select('span.review-text-content span')
+			    for review in soup.find_all('div', class_='review-text-content'):
+					# Extract the text content of the review
+					reviews = reviews.get_text().strip()
 			    for i in range(0,len(reviews)):
-			      reviews_list.append(reviews[i].get_text())
+				reviews_list.append(reviews[i].get_text())
 			st.text('webscraping completed')
 			st.text('labeling good and bad started')      
-
-			sentiment = []
-			for i in range(len(reviews_list)):
-			  sentiment.append(int(model.predict(vec.transform([reviews_list[i]]))))
+                        #for review in soup.find_all('div', class_='review-text-content'):
+    # Extract the text content of the review
+    #reviews = reviews.get_text().strip()
+	                #for i in range(0,len(reviews)):
+			 #reviews_list.append(reviews[i].get_text())
+    
+    # Check if the review contains images or videos
+                            for i in reviews_list:
+			if 'img' not in i and 'video' not in i:
+				sentiment = []
+				for i in range(len(reviews_list))
+				sentiment.append(int(model.predict(vec.transform([reviews_list[i]]))))
 
 			
 	        
