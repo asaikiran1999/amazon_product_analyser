@@ -51,7 +51,7 @@ def main():
             for review in soup.find_all('div', class_='review-text-content'):
                 reviews = review.get_text().strip()
                 reviews_list.append(reviews)
-            st.text(reviews_list[2])
+            st.text("sai")
                 # fix indentation here
             st.text('webscraping completed')
             st.text('labeling good and bad started')
