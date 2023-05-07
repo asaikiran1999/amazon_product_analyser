@@ -66,8 +66,7 @@ def main():
 
             # Remove the problematic element
             sizes = [size for idx, size in enumerate(sizes) if idx != problematic_idx]
-            labels = [label for idx, label in enumerate(labels) if idx != problematic_idx]
-            explode = [exp for idx, exp in enumerate(explode) if idx != problematic_idx]
+          
 
             if all(x >= 0 for x in sizes) and all(isinstance(x, int) for x in sizes):
                 fig1, ax1 = plt.subplots()
