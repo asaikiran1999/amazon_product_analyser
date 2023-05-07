@@ -60,7 +60,7 @@ def main():
 
             # Pie chart, where the slices will be ordered and plotted counter-clockwise:
             labels = 'Good', 'Bad'
-            sizes = [sentiment.count(1), sentiment.count(0)]
+            sizes = [sentiment[0], sentiment[1]]
             st.text(sizes)
             
 if __name__=='__main__':
