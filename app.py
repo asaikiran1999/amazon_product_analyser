@@ -55,7 +55,7 @@ def main():
                 for review in soup.find_all('div', {'data-hook': 'review'}):
                     review_text = review.find('span', {'data-hook': 'review-body'}).text.strip()
                     rating = float(review.find('i', {'data-hook': 'review-star-rating'}).text.replace('out of 5 stars', '').strip())
-                    reviews.append((review_text, rating))
+                    reviews.append(review_text)
                 return reviews
 
                 url = 'https://www.amazon.com/product-reviews/B01DFKC2SO'
