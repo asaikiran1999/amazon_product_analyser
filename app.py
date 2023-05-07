@@ -52,7 +52,7 @@ def main():
                 response = requests.get(url, headers=headers)
                 soup = BeautifulSoup(response.text, 'html.parser')
                 reviews = []
-                for review in soup.find_all('div', {'data-hook': 'review'}):
+                for review in soup.find_all('div', {'class': 'review-text'}):
                     review_text = review.find('span', {'data-hook': 'review-body'}).text.strip()
                     rating = float(review.find('i', {'data-hook': 'review-star-rating'}).text.replace('out of 5 stars', '').strip())
                     reviews.append(review_text)
