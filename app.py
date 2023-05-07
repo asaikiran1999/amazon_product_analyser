@@ -67,8 +67,8 @@ def main():
                 ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
                 ax1.axis('equal')
                 st.pyplot(fig1)
-                else:
-                    st.write('Invalid input for pie chart.')
+            else:
+                st.write('Invalid input for pie chart.')
 
 
 if __name__=='__main__':
