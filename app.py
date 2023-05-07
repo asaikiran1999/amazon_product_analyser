@@ -45,7 +45,7 @@ def main():
 			reviews_list = []
 			st.text('webscraping the reviews')
 			response = requests.get(url)
-			soup = BeautifulSoup(review_text, 'html.parser')
+			soup = BeautifulSoup(response, 'html.parser')
 			for tag in soup.find_all(['img', 'video']):
 				tag.extract()
 			for review in soup.find_all('div', class_='review-text-content'):
