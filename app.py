@@ -60,6 +60,7 @@ def main():
 
                 url = 'https://www.amazon.com/product-reviews/B01DFKC2SO'
                 reviews = get_reviews(url)
+                st.text(reviews[0])
 
                 # fix indentation here
             st.text('webscraping completed')
