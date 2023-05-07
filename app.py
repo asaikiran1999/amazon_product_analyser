@@ -62,12 +62,13 @@ def main():
             sizes = [sentiment.count(1), sentiment.count(0)]
             explode = (0, 0.1)  # only "explode" the 2nd slice (i.e. 'Bad')
 
-            fig1, ax1 = plt.subplots()
-            ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
-                    shadow=True, startangle=90)
-            ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-            st.pyplot(fig1)
+            if all(x >= 0 for x in sizes) and all(isinstance(x, int) for x in sizes):
+                fig1, ax1 = plt.subplots()
+                ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',shadow=True, startangle=90)
+                ax1.axis('equal')
+                st.pyplot(fig1)
+                else:
+                    st.write('Invalid input for pie chart.')
 
 
 if __name__=='__main__':
