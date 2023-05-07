@@ -37,7 +37,6 @@ def main():
         t = 1
     if t == 1:
         st.text('setup established')
-        st.markdown(html_temp,unsafe_allow_html = True)
         Amazon_reviews_link = st.text_input("Review link","")
         if st.button('analyse'):
             url = 'https://www.amazon.com/product-reviews/B01J94SWWU'
@@ -48,8 +47,8 @@ def main():
             from bs4 import BeautifulSoup
 
             def get_reviews(url):
-                headers = {'User-Agent': 'Mozilla/5.0'}
-                response = requests.get(url, headers=headers)
+                
+                response = requests.get(url)
                 soup = BeautifulSoup(response.text, 'html.parser')
                 reviews = []
                 for review in soup.find_all('div', {'data-hook': 'review-text-content'}):
