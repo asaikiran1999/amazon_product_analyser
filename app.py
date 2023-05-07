@@ -39,7 +39,7 @@ def main():
         st.markdown(html_temp,unsafe_allow_html = True)
         Amazon_reviews_link = st.text_input("Review link","")
         if st.button('analyse'):
-            url = Amazon_reviews_link
+            url = 'https://www.amazon.com/product-reviews/B01J94SWWU'
             url_cut = url
             reviews_list = []
             st.text('webscraping the reviews')
