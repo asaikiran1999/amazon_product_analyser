@@ -5,7 +5,7 @@ def main():
     from sklearn.feature_extraction.text import CountVectorizer
     import streamlit as st
     import requests
-    from bs4 import BeautifulSoup as bs
+    from bs4 import BeautifulSoup 
     import matplotlib.pyplot as plt
 
     st.title('Amazon Product Analyser')
