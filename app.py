@@ -44,6 +44,8 @@ def main():
 			url_cut = url
 			reviews_list = []
 			st.text('webscraping the reviews')
+			response = requests.get(url)
+                        soup = BeautifulSoup(response.content, 'html.parser')
 			for review in soup.find_all('div', class_='review-text-content'):
 				reviews = review.get_text().strip()
 			for i in range(0,len(reviews)):reviews_list.append(reviews[i].get_text())
