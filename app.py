@@ -54,12 +54,12 @@ def main():
 			        reviews = reviews.get_text().strip()
 			    for i in range(0,len(reviews)):reviews_list.append(reviews[i].get_text())
 			st.text('webscraping completed')
-			st.text('labeling good and bad started')      
-        for i in reviews_list:
-		if 'img' not in i and 'video' not in i:
-			sentiment = [] 
-			for i in range(len(reviews_list)):
-				sentiment.append(int(model.predict(vec.transform([reviews_list[i]]))))
+			st.text('labeling good and bad started')
+			for i in reviews_list:
+				if 'img' not in i and 'video' not in i:
+					sentiment = []
+					for i in range(len(reviews_list)):
+						sentiment.append(int(model.predict(vec.transform([reviews_list[i]]))))
 
 			
 	        
