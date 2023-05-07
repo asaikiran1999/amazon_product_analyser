@@ -44,7 +44,7 @@ def main():
 			url_cut = url[:-1]
 			reviews_list = []
 			st.text('webscraping the reviews')
-			for page in range(2,100):
+			for page in range(2,10):
 			  url = url_cut+str(page)
 			  code = requests.get(url)
 			  if str(code) == "<Response [200]>":
