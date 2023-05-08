@@ -7,6 +7,8 @@ def main():
 	import requests
 	from bs4 import BeautifulSoup as bs
 	import matplotlib.pyplot as plt
+	
+	st.set_page_config(layout="wide", initial_sidebar_state="auto")
 
 	st.title('Amazon Product Analyser')
 	html_temp = """
